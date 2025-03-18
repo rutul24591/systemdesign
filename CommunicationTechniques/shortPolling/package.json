@@ -1,0 +1,16 @@
+{
+	"name": "shortpolling",
+	"version": "1.0.0",
+	"description": "Describes short polling communication technique",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"shortPolling",
+		"communication",
+		"technique"
+	],
+	"author": "Rutul Amin",
+	"license": "ISC"
+}

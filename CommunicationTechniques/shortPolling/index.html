@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Short Polling Example</title>
+	</head>
+	<body>
+		<h1>Short Polling Example</h1>
+		<div id="data-container"></div>
+
+		<script>
+			async function getData() {
+				try {
+					const response = await fetch('/getData');
+					const resultantJson = await response.json();
+					document.getElementById('data-container').innerHTML =
+						resultantJson?.data;
+				} catch (error) {
+					console.error(`ERROR ENCOUNTERED WHILE FETCHING DATA: ${error}`);
+				}
+			}
+
+			let intervalId;
+
+			function shortPolling() {
+				intervalId = setInterval(() => {
+					getData();
+				}, 8000);
+			}
+
+			shortPolling();
+
+			// !!! On Navigation or any other user action or when target condition is met, clear the interval
+			// clearInterval(intervalId);
+		</script>
+	</body>
+</html>

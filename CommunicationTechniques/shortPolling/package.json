@@ -4,6 +4,8 @@
 	"description": "Describes short polling communication technique",
 	"main": "index.js",
 	"scripts": {
+		"dev": "node index.js",
+		"start": "node index.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"keywords": [
@@ -12,5 +14,10 @@
 		"technique"
 	],
 	"author": "Rutul Amin",
-	"license": "ISC"
+	"license": "ISC",
+	"dependencies": {
+		"body-parser": "^1.20.3",
+		"express": "^4.21.2",
+		"nodemon": "^3.1.9"
+	}
 }

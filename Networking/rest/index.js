@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 app.all('/', (req, res) => {
   // console.log('Request > ', req);
   // console.log('Response >', res);
-  res.send(`I'm up!`);
+  res.send(`I'm up!. Try the following routes - /todos, /todos/:id`);
 });
 
 const todos = [{

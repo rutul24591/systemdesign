@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Subresource Integrity Example</title>
+		<!-- Secure Code -->
+		<!-- <script src="https://example.com/some-library.js" integrity="sha384-abc123..." crossorigin="anonymous"></script> -->
+		<!-- Remove pZ at the end of script and save-->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+			integrity="sha384-H6KKS1H1WwuERMSm+54dYLzjg0fKqRK5ZRyASdbrI/lwrCc6bXEmtGYr5SwvP1"
+			crossorigin="anonymous"
+		></script>
+		<script>
+			// Example usage of lodash
+			const array = [1, 2, 3, 4, 5];
+			const reversedArray = _.reverse(array.slice());
+			console.log(reversedArray); // Output: [5, 4, 3, 2, 1]
+			// This will log the reversed array to the console
+			// You can use lodash functions securely with SRI
+		</script>
+	</head>
+	<body>
+		<h1>Hello, this is Sub resource Integrity example.</h1>
+		<p>Open console in inspector.</p>
+		<p><span>1.</span>Reload the page and check the console. It will work</p>
+		<p>
+			<span>2.</span>Change the integrity hash in the script tag to something
+			else.
+		</p>
+		<p>
+			<span>3.</span>Reload the page and check the console. It will not work
+		</p>
+		<p><span>4.</span>Change the integrity hash back to the original one.</p>
+		<p><span>5.</span>Reload the page and check the console. It will work</p>
+	</body>
+</html>

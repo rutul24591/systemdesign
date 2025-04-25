@@ -1,0 +1,16 @@
+{
+	"name": "testdrivendevelopment",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "jest --watchAll=true"
+	},
+	"keywords": [],
+	"author": "Rutul Amin",
+	"license": "ISC",
+	"devDependencies": {
+		"fb-watchman": "^2.0.2",
+		"jest": "^29.7.0"
+	}
+}

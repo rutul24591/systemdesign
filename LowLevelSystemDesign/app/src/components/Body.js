@@ -19,7 +19,7 @@ const Body = () => {
   }
 
   return (
-    <div className='flex flex-wrap'>
+    <div className='flex flex-wrap m-5 p-5 justify-between items-center'>
       {memes?.map((meme, index) => {
         return (
           <MemeCard key={index} data={meme} />

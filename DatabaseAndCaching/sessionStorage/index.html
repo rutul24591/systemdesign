@@ -83,7 +83,24 @@
 					alert('Please enter a note');
 				}
 			}
+
 			// Function to remove a note
+			function removeNote(index) {
+				// TODO:  Get existing notes from sessionStorage
+				const existingNotes = JSON.parse(
+					sessionStorage.getItem('notes') || '[]',
+				);
+
+				// Remove the note at the specified index
+				existingNotes.splice(index, 1);
+
+				// TODO:  Save the updated notes to sessionStorage
+				sessionStorage.setItem('notes', JSON.stringify(existingNotes));
+
+				// Update the note list
+				renderNotes();
+			}
+
 			// Function to render notes
 		</script>
 	</body>

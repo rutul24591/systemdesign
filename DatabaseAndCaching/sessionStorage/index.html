@@ -102,6 +102,34 @@
 			}
 
 			// Function to render notes
+			function renderNotes() {
+				// TODO: Get existing notes from sessionStorage
+				const existingNotes = JSON.parse(
+					sessionStorage.getItem('notes') || '[]',
+				);
+
+				const noteList = document.getElementById('noteList');
+				noteList.innerHTML = '';
+
+				// Render Note list
+				existingNotes.forEach((note, index) => {
+					const li = document.createElement('li');
+					li.className = 'note';
+
+					const removeButton = document.createElement('button');
+					removeButton.className = 'remove-button';
+					removeButton.textContent = 'Remove note';
+					removeButton.onclick = () => removeNote(index);
+
+					li.innerHTML = `<span>${note}</span>`;
+					li.appendChild(removeButton);
+
+					noteList.appendChild(li);
+				});
+			}
+
+			// Run renderNotes on page load
+			renderNotes();
 		</script>
 	</body>
 </html>

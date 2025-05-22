@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>SessionStorage Notes App</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				padding: 20px;
+			}
+
+			input {
+				padding: 8px;
+				margin-right: 10px;
+			}
+
+			button {
+				padding: 8px;
+				cursor: pointer;
+			}
+
+			ul {
+				list-style-type: none;
+				padding: 0;
+			}
+
+			li {
+				margin-bottom: 10px;
+			}
+
+			.note {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.remove-button {
+				background-color: #ff6347;
+				color: #fff;
+				border: none;
+				padding: 5px 10px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Session storage notes application</h1>
+
+		<div class="container">
+			<input type="text" id="noteInput" placeholder="Add a new note" />
+			<button onclick="addNote()" id="addNoteButton">Add Note</button>
+		</div>
+
+		<ul id="noteList"></ul>
+
+		<script>
+			let notes = []; // Array to hold notes
+			// Function to add a note.
+			function addNote() {
+				const noteInput = document.getElementById('noteInput');
+				const noteList = document.getElementById('noteList');
+				const noteText = noteInput.value.trim();
+
+				if (noteText !== '') {
+					// TODO:  Get existing notes from sessionStorage
+					const existingNotes = JSON.parse(
+						sessionStorage.getItem('notes') || '[]',
+					);
+
+					// Add the new note
+					existingNotes.push(noteText);
+
+					// TODO:  Save the updated notes to sessionStorage
+					sessionStorage.setItem('notes', JSON.stringify(existingNotes));
+
+					// Update the note list
+					renderNotes();
+
+					// Clear the input field
+					noteInput.value = '';
+				} else {
+					alert('Please enter a note');
+				}
+			}
+			// Function to remove a note
+			// Function to render notes
+		</script>
+	</body>
+</html>

@@ -12,7 +12,7 @@ const Body = () => {
     const data = await fetch('https://api.imgflip.com/get_memes');
     const json = await data.json();
 
-    console.log('json:', json);
+    // console.log('json:', json);
 
     setMemes((memes => [...memes, ...json.data.memes]));
 

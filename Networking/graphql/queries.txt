@@ -1,0 +1,96 @@
+# 1. CREATE USER - WORKS
+# mutation{
+#   createUser(username:"testUsername2", 
+#              email:"test2@gmail.com", 
+#              password: "testPassword2", 
+#              isAdmin: false)
+# }
+
+
+# 2. CREATE ORDER - WORKS
+# mutation{
+#   createOrder(
+#     userId: "68bffcd3d8030bb869111b50",
+#     firstName: "John",
+#     lastName: "Doe",
+#     address: "10/B Shilp park",
+#     city: "Ahmedabad",
+#     country: "India",
+#     zipCode: "839544",
+#     totalAmount: 241,
+#     items: "[{\"itemName\":\"itemName1\",\"price\":213},{\"itemName\":\"itemName2\", \"price\":232}]"
+#   )
+# }
+
+# 3. LOGIN USER	- WORKS
+# mutation{
+#   loginUser( email:"test@gmail.com", password: "testPassword")
+# }
+
+# 4. CREATE NEW PRODUCT - WORKS
+# mutation {
+#   createProduct(
+#     title: "Third Product",
+#     brand: "Example Brand",
+#     category: "Electronics",
+#     description: "A new product description.",
+#     discountPercentage: 18,
+#     images: "image path",
+#     price: 349.99,
+#     rating: 4.4,
+#     stock: 23,
+#     thumbnail: "thumbnail path",
+#   ) {
+#     id
+#     title
+#   }
+# }
+
+# 5. UPDATE PRODUCT - WORKS
+# mutation {
+#   updateProduct(id:"68c003b0109a1b5544c06581", description: "Update description for the first product"){
+#     id,
+#     description,
+#     title
+#   }
+# }
+
+# 6. DELETE PRODUCT - WORKS
+# mutation{
+#   deleteProduct(id:"68c0039a109a1b5544c0657f"){
+#     id
+#   }
+# }
+
+# 7. GET ALL PRODUCTS - WORKS
+# query{
+#   getAllProducts{
+#     id,
+#     title,
+#     brand
+#   }
+# }
+
+#8. GET PRODUCT - WORKS
+# query {
+#   getProduct(id: "68c003b0109a1b5544c06581") {
+#     id
+#     title
+#     brand
+#     category
+#     description
+#     price
+#     stock
+#     images
+#   }
+# }
+
+#9. GET ALL ORDERS - WORKS
+# query {
+#  getAllOrders{
+#     id,
+#     totalAmount,
+#     userId,
+#     items
+#   } 
+# }

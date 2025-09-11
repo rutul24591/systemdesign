@@ -46,7 +46,7 @@
 			function toggleMode() {
 				const body = document.body;
 
-				const currentMode = localStorage.getItem('mode');
+				const currentMode = localStorage.getItem('mode') || 'dark';
 
 				// Toggle between dark and light modes
 				const newMode = currentMode === 'dark' ? 'light' : 'dark';

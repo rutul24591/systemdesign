@@ -12,7 +12,6 @@ app.get('/sse', (req, res) => {
   res.write('data: Welcome to Server sent event \n\n');
   res.write('data: This is a test message \n\n');
 
-
   const intervalId = setInterval(() => {
     const data = new Date().toLocaleTimeString();
     res.write(`data: ${data} \n\n`);

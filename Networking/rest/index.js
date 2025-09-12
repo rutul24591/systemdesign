@@ -72,8 +72,8 @@ app.delete('/todos/:id', (req, res) => {
 
 })
 
-
 const PORT = 5111;
+
 app.listen(PORT, () => {
   console.log(`Server is running at port ${PORT}`);
 });
